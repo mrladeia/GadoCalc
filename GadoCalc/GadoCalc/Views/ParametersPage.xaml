@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:GadoCalc.ViewModels"
+             mc:Ignorable="d"
+             x:Class="GadoCalc.Views.ParametersPage"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:ParametersViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#25D366</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,0,16,40" Spacing="0">
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Label FontSize="20" FontAttributes="Bold" Text="Valor do Frete (R$)" />
+                    <Entry x:Name="EntryValorFrete" Placeholder="Exemplo: 200" Keyboard="Telephone"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Label FontSize="20" FontAttributes="Bold" Text="Comissão (%)" />
+                    <Entry x:Name="EntryComissao" Placeholder="Exemplo: 2" Keyboard="Telephone"/>
+                </StackLayout>
+
+                <Button Margin="0,20,0,0" Text="Salvar"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" 
+                        Clicked="OnButtonClicked" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GadoCalc.Views.CalculatorPage"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#25D366</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,0,16,40" Spacing="0">
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Label FontSize="20" FontAttributes="Bold" Text="Valor da Cabeça (R$)" />
+                    <Entry x:Name="EntryValorCabeca" Placeholder="Exemplo: 1200" Keyboard="Telephone"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Label FontSize="20" FontAttributes="Bold" Text="Quantidade" />
+                    <Entry x:Name="EntryQuantidade" Placeholder="Exemplo: 30" Keyboard="Telephone" Grid.Row="3" WidthRequest="10"/>
+                </StackLayout>
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Comissão: " FontAttributes="Bold" FontSize="16" />
+                                <Span Text=" " FontSize="16" x:Name="SpanParameterComission" />
+                                <Span Text=" " />
+                                <Span Text="Frete: " FontAttributes="Bold" FontSize="16" />
+                                <Span Text=" " FontSize="16" x:Name="SpanParameterFrete"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label FontSize="20" Padding="0,20,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Comissão + Frete / Cab.:" FontAttributes="Bold" FontSize="20" />
+                                <Span Text=" " />
+                                <Span Text="X" x:Name="SpanCabecaComissao" ForegroundColor="{StaticResource LightTextColor}" />
+                                <Span Text=" + " ForegroundColor="{StaticResource LightTextColor}" />
+                                <Span Text="X" x:Name="SpanCabecaFrete" ForegroundColor="{StaticResource LightTextColor}" />
+                                <Span Text=" = " ForegroundColor="{StaticResource LightTextColor}" />
+                                <Span Text="X" x:Name="SpanTotalDespesasCabeca" ForegroundColor="{StaticResource LightTextColor}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label FontSize="20">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Valor Cabeça:" FontAttributes="Bold" FontSize="20" />
+                                <Span Text=" " />
+                                <Span Text="X" x:Name="SpanValorTotalCabeca" ForegroundColor="{StaticResource LightTextColor}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label FontSize="20" Padding="0,10,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="TOTAL:" FontAttributes="Bold" FontSize="22" />
+                                <Span Text=" " />
+                                <Span Text="X" x:Name="SpanValorFinal" ForegroundColor="{StaticResource LightTextColor}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Margin="0,20,0,0" Text="Calcular"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" 
+                        x:Name="btnCalc"
+                        Clicked="OnButtonClicked" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
