@@ -12,7 +12,6 @@ namespace GadoCalc.Views
     {
         public MainPage()
         {
-            //Teste
             InitializeComponent();
         }
     }
