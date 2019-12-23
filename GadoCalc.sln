@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GadoCalc.Android", "GadoCal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GadoCalc.iOS", "GadoCalc\GadoCalc.iOS\GadoCalc.iOS.csproj", "{E4734B25-4EA9-48C6-9A2B-466C1B9E78B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GadoCalc", "GadoCalc\GadoCalc\GadoCalc.csproj", "{EBAD7B21-A3FA-4E53-9C7D-5DC3209DCAA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GadoCalc", "GadoCalc\GadoCalc\GadoCalc.csproj", "{EBAD7B21-A3FA-4E53-9C7D-5DC3209DCAA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{339318EB-0210-418F-B9A5-01A1CA037E96}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
